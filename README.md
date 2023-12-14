@@ -1,8 +1,9 @@
 # *plotframe*: Plot a 3-D Cartesian coordinate system
 
 [![View on GitHub](https://img.shields.io/badge/GitHub-Repository-171515)](https://github.com/WD40andTape/plotframe)
+[![View on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://mathworks.com/matlabcentral/fileexchange/156419-plotframe-plot-a-3-d-cartesian-coordinate-system)
 
-[<img src="figure.png" width="700px">]
+<img src="figure.png" width="700px">
 
 ### Syntax
 
