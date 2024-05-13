@@ -105,10 +105,10 @@ function varargout = plotframe( rotationMatrix, translationVector, ...
     
     % If row-major order, the rows of the matrix denote its basis vectors.
     % If column-major order, the columns are its basis vectors.
-    if anynan( translationVector )
+    if any( isnan( translationVector ) )
         translationVector = [ 0, 0, 0 ];
     end
-    if anynan( basisVectorLengths )
+    if any( isnan( basisVectorLengths ) )
         basisVectorLengths = 1;
     end
     if strncmpi( Options.MatrixIndexing, "columnmajor", 1 )
@@ -196,9 +196,8 @@ function mustBeAxes( x )
     % Validate that x is a valid graphics objects parent, i.e., an axes, 
     % group (hggroup), or transform (hgtransform) object, and has not been 
     % deleted (closed, cleared, etc).
-    isAxes = isgraphics( x, "matlab.graphics.axis.Axes" ) || ...
-         isgraphics( x, "matlab.graphics.primitive.Group" ) || ...
-         isgraphics( x, "matlab.graphics.primitive.Transform" );
+    isAxes = isgraphics( x, "axes" ) || isgraphics( x, "hggroup" ) || ...
+         isgraphics( x, "hgtransform" );
     if ~isAxes
         id = "plotframe:Validators:InvalidAxesHandle";
         msg = "Must be handle to graphics objects " + ...
